@@ -73,6 +73,9 @@
           <router-link :to="'/hospSet/hospital/show/'+scope.row.id">
             <el-button type="primary" size="mini" icon="el-icon-edit">查看</el-button>
           </router-link>
+          <router-link :to="'/hospSet/hospital/schedule/'+scope.row.hoscode">
+            <el-button type="primary" size="mini">排班</el-button>
+          </router-link>
           <el-button
             v-if="scope.row.status == 1"
             type="primary"
@@ -173,7 +176,7 @@ export default {
         .then(response => {
           this.fetchData(this.page)
         })
-    },
+    }
   }
 }
 </script>
